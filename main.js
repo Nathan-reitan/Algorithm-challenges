@@ -50,7 +50,7 @@ function centuryFromYear(year) {
 
 function checkPalindrome(inputString) {
   let reverse = "";
-  for (let i = inputString.length-1; i>0; i--){
+  for (let i = inputString.length-1; i>=0; i--){
     reverse += inputString[i];
   }
   if (reverse === inputString){
@@ -58,4 +58,17 @@ function checkPalindrome(inputString) {
   } else {
     return false
   }
+}
+
+function adjacentElementsProduct(inputArray) {
+  let product = null
+  for (let i = 0; i<inputArray.length-1; i++){
+    if (i===0){
+      product = inputArray[i] * inputArray[i + 1]
+    }
+    if (inputArray[i] * inputArray[i + 1]>product){
+      product = inputArray[i] * inputArray[i + 1]
+    }
+  }
+  return product
 }

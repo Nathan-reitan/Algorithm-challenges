@@ -82,3 +82,27 @@ function shapeArea(n) {
   }
   return area;
 }
+
+function makeArrayConsecutive2(statues) {
+  // let lowest = 0
+  // for (let i = 0; i<statues.length; i++){
+  //   if (i===0){
+  //     lowest = statues[i]
+  //   }
+  //   if (statues[i]<lowest){
+  //     lowest = statues[i]
+  //   }
+  // }
+  statues.sort((a, b)=>a-b)
+  let lowest = statues[0]
+  let need = 0
+  for (let i = 1; i<(statues[statues.length-1] - statues[0]); i++){
+    if (statues[i]!==lowest+1){
+      need++
+      lowest++
+    } else {
+      lowest++
+    }
+  }
+  return need
+}

@@ -47,3 +47,15 @@ function firstDuplicate(a){
 function centuryFromYear(year) {
   return Math.ceil(year/100);
 }
+
+function checkPalindrome(inputString) {
+  let reverse = "";
+  for (let i = inputString.length-1; i>0; i--){
+    reverse += inputString[i];
+  }
+  if (reverse === inputString){
+    return true;
+  } else {
+    return false
+  }
+}

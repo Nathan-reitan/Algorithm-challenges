@@ -72,3 +72,13 @@ function adjacentElementsProduct(inputArray) {
   }
   return product
 }
+
+function shapeArea(n) {
+  let line1 = n + n - 1
+  let area = line1
+  for (let i = n-1; i>0; i--){
+    area += (line1 - 2)*2
+    line1 -=2
+  }
+  return area;
+}

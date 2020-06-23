@@ -84,25 +84,31 @@ function shapeArea(n) {
 }
 
 function makeArrayConsecutive2(statues) {
-  // let lowest = 0
-  // for (let i = 0; i<statues.length; i++){
-  //   if (i===0){
-  //     lowest = statues[i]
-  //   }
-  //   if (statues[i]<lowest){
-  //     lowest = statues[i]
-  //   }
-  // }
-  statues.sort((a, b)=>a-b)
-  let lowest = statues[0]
-  let need = 0
-  for (let i = 1; i<(statues[statues.length-1] - statues[0]); i++){
-    if (statues[i]!==lowest+1){
-      need++
-      lowest++
-    } else {
-      lowest++
+  statues.sort((a, b) => a - b)
+  var need = statues.reduce(function (acc, cur, ind, arr) {
+    var diff = cur - arr[ind - 1];
+    if (diff > 1) {
+      var i = 1;
+      while (i < diff) {
+        acc.push(arr[ind - 1] + 1);
+        i++;
+      }
+    }
+    return acc;
+  }, [])
+  return need.length
+}
+
+function almostIncreasingSequence(sequence) {
+  let count = 0;
+  for (let i = 1; i<sequence.length; i++){
+    if (sequence[i] !== sequence[i-1]+1){
+      count++
     }
   }
-  return need
+  if (count>1){
+    return false
+  } else {
+    return true
+  }
 }

@@ -100,15 +100,22 @@ function makeArrayConsecutive2(statues) {
 }
 
 function almostIncreasingSequence(sequence) {
-  let count = 0;
-  for (let i = 1; i<sequence.length; i++){
-    if (sequence[i] !== sequence[i-1]+1){
-      count++
+  const size = sequence.length;
+  let counter = 0;
+  let cond1;
+  let cond2;
+  if (size ===2) return true;
+  for (let i =0; i<size-1; i++){
+    if (sequence[i+1]<=sequence[i]){
+      counter++;
+      if (i+2<size && sequence[i+2]<=sequence[i]){
+        cond1 = true
+      }
+      if (i-1>=0&&sequence[i+1]<=sequence[i-1]){
+        cond2 = true
+      }
+      if (cond1 && cond2 || counter>=2) return false
     }
   }
-  if (count>1){
-    return false
-  } else {
-    return true
-  }
+  return true
 }

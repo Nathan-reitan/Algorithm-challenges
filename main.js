@@ -123,6 +123,15 @@ function almostIncreasingSequence(sequence) {
 function matrixElementsSum(matrix) {
   let sum = 0;
   for (let i = 0; i < matrix.length; i++){
+    for (let inc = 0; inc<matrix[i].length; inc++){
+      if (matrix[0][inc]!==0){
+        sum += matrix[0][inc]
+      }
+      if (matrix[i][inc]===0){
+        sum+1
+      }
+
+    }
     sum+1
     return true
   }

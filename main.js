@@ -129,9 +129,24 @@ function matrixElementsSum(matrix) {
       } else if (i===1 && matrix[i-1][inc]!==0){
         sum += matrix[i][inc]
       } else if (i === 2 && matrix[i - 1][inc] !== 0 && matrix[i-2][inc]!==0){
-        sum !=matrix[i][inc]
+        sum +=matrix[i][inc]
       }
     }
   }
   return sum
+}
+
+function allLongestStrings(inputArray) {
+  let largest = 0;
+  let newArr = [];
+  for (let i = 0; i<inputArray.length; i++){
+    if (inputArray[i].length>largest){
+      largest = inputArray[i].length
+    }
+  }
+  for (let inc = 0; inc<inputArray.length; inc++)
+    if (inputArray[inc].length===largest){
+      newArr.push(inputArray[inc])
+    }
+    return newArr
 }

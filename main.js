@@ -150,3 +150,42 @@ function allLongestStrings(inputArray) {
     }
     return newArr
 }
+
+  function commonCharacterCount(s1, s2) {
+    var count = 0;
+    s1 = s1.split('');
+    s2 = s2.split('');
+
+    s1.forEach(e => {
+      if (s2.includes(e)) {
+        count++;
+        s2.splice(s2.indexOf(e), 1);
+      }
+    });
+    return count;
+  }
+
+function isLucky(n) {
+  let half1Sum = 0;
+  let half2Sum = 0;
+  n = n.toString();
+  let half1Length = (n.length/2);
+  let half2Length = n.length;
+  let half1 = n.slice(0, half1Length);
+  let half2 = n.slice(half1Length, half2Length);
+  half1 = half1.split("")
+  half2 = half2.split("")
+  for (let i = 0; i<half1.length; i++){
+    half1.splice(i,1, parseInt(half1[i]))
+    half1Sum +=half1[i];
+  }
+  for (let inc = 0; inc < half2.length; inc++) {
+    half2.splice(inc, 1, parseInt(half2[inc]))
+    half2Sum += half2[inc];
+  }
+  if (half1Sum === half2Sum) {
+    return true
+  } else {
+    return false
+  }
+}

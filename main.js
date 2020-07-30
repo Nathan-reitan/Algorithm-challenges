@@ -124,15 +124,14 @@ function matrixElementsSum(matrix) {
   let sum = 0;
   for (let i = 0; i < matrix.length; i++){
     for (let inc = 0; inc<matrix[i].length; inc++){
-      if (matrix[0][inc]!==0){
-        sum += matrix[0][inc]
+      if (i===0){
+        sum+=matrix[i][inc]
+      } else if (i===1 && matrix[i-1][inc]!==0){
+        sum += matrix[i][inc]
+      } else if (i === 2 && matrix[i - 1][inc] !== 0 && matrix[i-2][inc]!==0){
+        sum !=matrix[i][inc]
       }
-      if (matrix[i][inc]===0){
-        sum+1
-      }
-
     }
-    sum+1
-    return true
   }
+  return sum
 }

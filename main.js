@@ -189,3 +189,22 @@ function isLucky(n) {
     return false
   }
 }
+
+function sortByHeight(a){
+  const tempArray = [];
+  const indexArray = []
+  for (let i = 0; i<a.length; i++){
+    if (a[i] ===-1){
+      continue
+    }
+    tempArray.push(a[i])
+    indexArray.push(i)
+    tempArray.sort(function (a, b) {
+      return a - b;
+    })
+    for (let inc = 0; inc<indexArray.length; inc++){
+      a.splice(indexArray[inc], 1, tempArray[inc])
+    }
+  }
+  return a
+}

@@ -210,7 +210,10 @@ function sortByHeight(a){
 }
 
 function reverseInParentheses(inputString){
-  for (let i = 0; i<inputString.length; i++){
-
-  }
+  const array = inputString.split('(');
+  inputString = array.join();
+  const array2 = inputString.split(')');
+  console.log(`array: ${array}
+  array2: ${array2}
+  inputString: ${inputString}`)
 }

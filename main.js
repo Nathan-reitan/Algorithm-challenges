@@ -199,16 +199,18 @@ function sortByHeight(a){
     }
     tempArray.push(a[i])
     indexArray.push(i)
-    tempArray.sort(function (a, b) {
-      return a - b;
-    })
-    for (let inc = 0; inc<indexArray.length; inc++){
-      a.splice(indexArray[inc], 1, tempArray[inc])
-    }
+  }
+  tempArray.sort(function (a, b) {
+    return a - b;
+  })
+  for (let inc = 0; inc < indexArray.length; inc++) {
+    a.splice(indexArray[inc], 1, tempArray[inc])
   }
   return a
 }
 
 function reverseInParentheses(inputString){
+  for (let i = 0; i<inputString.length; i++){
 
+  }
 }

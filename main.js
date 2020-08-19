@@ -213,7 +213,7 @@ function reverseInParentheses(inputString){
   const indexArray = []
   for (let i = 0; i<inputString.length; i++){
     if (inputString[i]==='('){
-      while(inputString[i])
+      while(inputString[i]){}
     }
   }
 

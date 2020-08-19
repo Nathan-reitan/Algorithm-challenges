@@ -210,9 +210,9 @@ function sortByHeight(a){
 }
 
 
-function reverseParentheses(s) {
+function reverseInParentheses(s) {
   if (s.includes('(')) {
-    return reverseParentheses(reverseOnce(s));
+    return reverseInParentheses(reverseOnce(s));
   } else {
     return s;
   }
@@ -223,26 +223,4 @@ function reverseOnce(s) {
   var subStr = regexp.exec(s)[1];
   subStr = subStr.split('').reverse().join('');
   return s.replace(regexp, subStr)
-}
-
-
-// function reverseInParentheses(inputString){
-//   const indexArray = []
-//   for (let i = 0; i<inputString.length; i++){
-//     if (inputString[i]==='('){
-//       while(inputString[i]!==')'){
-//         indexArray.push(i)
-//       }
-//     }
-//     console.log(indexArray)
-//   }
-
-
-
-  // const array = inputString.split('(');
-  // inputString = array.join();
-  // const array2 = inputString.split(')');
-  // console.log(`array: ${array}
-  // array2: ${array2}
-  // inputString: ${inputString}`)
 }

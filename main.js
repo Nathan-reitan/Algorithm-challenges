@@ -209,13 +209,33 @@ function sortByHeight(a){
   return a
 }
 
-function reverseInParentheses(inputString){
-  const indexArray = []
-  for (let i = 0; i<inputString.length; i++){
-    if (inputString[i]==='('){
-      while(inputString[i]){}
-    }
+
+function reverseParentheses(s) {
+  if (s.includes('(')) {
+    return reverseParentheses(reverseOnce(s));
+  } else {
+    return s;
   }
+}
+
+function reverseOnce(s) {
+  var regexp = /\(([^()]*)\)/i;
+  var subStr = regexp.exec(s)[1];
+  subStr = subStr.split('').reverse().join('');
+  return s.replace(regexp, subStr)
+}
+
+
+// function reverseInParentheses(inputString){
+//   const indexArray = []
+//   for (let i = 0; i<inputString.length; i++){
+//     if (inputString[i]==='('){
+//       while(inputString[i]!==')'){
+//         indexArray.push(i)
+//       }
+//     }
+//     console.log(indexArray)
+//   }
 
 
 

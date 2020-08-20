@@ -224,3 +224,14 @@ function reverseOnce(s) {
   subStr = subStr.split('').reverse().join('');
   return s.replace(regexp, subStr)
 }
+
+function alternatingSums(a) {
+  let teamA = 0;
+  for (let i = 0; i<a.length; i+2){
+   teamA += parseInt(a.splice(i, 1))
+   a.splice(i, 0, 0)
+   console.log('a: ', a)
+   console.log('teamA: ', teamA)
+  }
+  return teamA
+}

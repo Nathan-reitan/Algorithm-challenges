@@ -227,21 +227,21 @@ function reverseOnce(s) {
 
 function alternatingSums(a) {
   let teamA = []
-  for (let i = 0; i<a.length; i+1){
+  let teamASum = 0;
+  let teamB = []
+  let teamBSum = 0;
+  let returnArray = []
+  for (let i = 0; i<a.length; i+=2){
     teamA.push(a[i]);
   }
-  let teamASum = 0;
-  teamA.forEach(n => teamASum+=n)
+  for (let i =1; i<a.length; i+=2){
+    teamB.push(a[i])
+  }
+  teamA.forEach(n => teamASum += n)
+  teamB.forEach(n => teamBSum += n)
 
+  returnArray.push(teamASum)
+  returnArray.push(teamBSum)
+  return returnArray
 
-
-
-  // let teamA = 0;
-  // for (let i = 0; i<a.length; i+2){
-  //  teamA += parseInt(a.splice(i, 1))
-  //  a.splice(i, 0, 0)
-  //  console.log('a: ', a)
-  //  console.log('teamA: ', teamA)
-  // }
-  // return teamA
 }

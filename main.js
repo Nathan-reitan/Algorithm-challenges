@@ -249,16 +249,18 @@ function alternatingSums(a) {
 // var exArray = ["abc", "ded"] needs to become ["*****", "*abc*", "*ded*", "*****"]
 
 function addBorder(picture) {
-  let length = picture[0].length + 2;
-  let front = ""
-  let end = ""
-  for (let i = 0; i<picture.length; i++){
-    picture[i] = `*${picture[i]}*`
+  const array = picture.slice();
+  let length = array[0].length + 2;
+  let front = "";
+  let end = "";
+  for (let i = 0; i < array.length; i++) {
+    array[i] = `*${array[i]}*`
   }
-  for (let inc = 0; inc<length; inc++){
-    front = front+"*";
-    end = end+"*"
+  for (let inc = 0; inc < length; inc++) {
+    front = front + "*";
+    end = end + "*"
   }
-  picture.unshift(front).push(end)
-  return picture
+  array.unshift(front)
+  array.push(end)
+  return array
 }

@@ -245,3 +245,20 @@ function alternatingSums(a) {
   return returnArray
 
 }
+
+// var exArray = ["abc", "ded"] needs to become ["*****", "*abc*", "*ded*", "*****"]
+
+function addBorder(picture) {
+  let length = picture[0].length + 2;
+  let front = ""
+  let end = ""
+  for (let i = 0; i<picture.length; i++){
+    picture[i] = `*${picture[i]}*`
+  }
+  for (let inc = 0; inc<length; inc++){
+    front = front+"*";
+    end = end+"*"
+  }
+  picture.unshift(front).push(end)
+  return picture
+}

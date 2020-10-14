@@ -266,22 +266,80 @@ function addBorder(picture) {
 }
 
 function areSimilar(a, b){
-  var tempArr = b;
-  if (a.length === b.length) {
-    for (let i = 0; i < a.length; i++) {
-      if (tempArr.indexOf(a[i]) != -1) {
-        tempArr.splice(tempArr.indexOf(a[i]), 1);
-      }
-      else { return false; }
+  let bFirst = b[0];
+  let bSecond = b[1];
+  let bThird = b[2];
+  let b2 = [bSecond, bFirst, bThird];
+  let b3 = [bFirst, bThird, bSecond];
+  let b4 = [bThird, bSecond, bFirst];
+  let result = null;
+  for(let i =0; i<a.length; i++){
+    if (a[i] !== b[i]){
+      result = false
+    } else{
+      result = true
+      return result;
     }
+    if (a[i] !==b2[i]){
+      result = false
+    } else {
+      result = true
+      return result;
+    }
+    if (a[i]!==b3[i]){
+      result = false
+    } else {
+      result = true
+      return result;
+    }
+    if(a[i]!==b4[i]){
+      result = false
+    } else {
+      result = true
+      return result;
+    }
+    return result
   }
-  else { return false; }
-  if (tempArr.length == 0) {
-    return true;
-  } else {
-    return false;
-  }
+
+  // for (let i = 0; i<a.length; i++){
+  //   if (a[i]!==b[i]){
+  //     tempArr.splice(0,1, bSecond)
+  //     tempArr.splice(1,1, bFirst)
+  //     for (let inc = 0; inc<a.length; i++){
+  //       if (a[inc]!==tempArr[inc]){
+  //         tempArr = b.splice();
+  //         tempArr.splice(1,1, bThird);
+  //         tempArr.splice(2,1, bSecond);
+  //         for (let incr = 0; incr<a.length; i++){
+  //           if (a[incr]!==tempArr[incr]){
+  //             return false
+  //           }
+  //         }
+  //       }
+  //     }
+  //   } else{
+  //     return true;
+  //   }
+  // }
 }
+
+// function areSimilar(a, b){
+//   var tempArr = b;
+//   if (a.length === b.length) {
+//     for (let i = 0; i < a.length; i++) {
+//       if (tempArr.indexOf(a[i]) != -1) {
+//         tempArr.splice(tempArr.indexOf(a[i]), 1);
+//       }
+//       else { return false; }
+//     }
+//   }
+//   else { return false; }
+//   if (tempArr.length == 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 // function areSimilar(a, b) {
 //   let aSort = a.sort()

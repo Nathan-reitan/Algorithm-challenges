@@ -264,3 +264,26 @@ function addBorder(picture) {
   array.push(end)
   return array
 }
+
+function areSimilar(a, b) {
+  let aSort = a.sort()
+  let bSort = b.sort()
+  console.log(aSort)
+  console.log(bSort)
+  for (let i = 0; i<a.length; i++){
+    if (aSort[i] !== bSort[i]){
+      return false
+    }
+  }
+  return true;
+}
+
+
+  // let aVal = null;
+  // for (let i = 0; i<a.length; i++){
+  //   aVal = a[i];
+  //   for (let inc = 0; inc<b.length; inc++){
+  //     if (aVal === b[i]){
+  //       a.splice(i)
+  //     }
+  //   }

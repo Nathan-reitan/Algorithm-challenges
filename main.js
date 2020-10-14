@@ -265,18 +265,36 @@ function addBorder(picture) {
   return array
 }
 
-function areSimilar(a, b) {
-  let aSort = a.sort()
-  let bSort = b.sort()
-  console.log(aSort)
-  console.log(bSort)
-  for (let i = 0; i<a.length; i++){
-    if (aSort[i] !== bSort[i]){
-      return false
+function areSimilar(a, b){
+  var tempArr = b;
+  if (a.length === b.length) {
+    for (let i = 0; i < a.length; i++) {
+      if (tempArr.indexOf(a[i]) != -1) {
+        tempArr.splice(tempArr.indexOf(a[i]), 1);
+      }
+      else { return false; }
     }
   }
-  return true;
+  else { return false; }
+  if (tempArr.length == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+// function areSimilar(a, b) {
+//   let aSort = a.sort()
+//   let bSort = b.sort()
+//   console.log(aSort)
+//   console.log(bSort)
+//   for (let i = 0; i<a.length; i++){
+//     if (aSort[i] !== bSort[i]){
+//       return false
+//     }
+//   }
+//   return true;
+// }
 
 
   // let aVal = null;

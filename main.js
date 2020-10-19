@@ -267,6 +267,11 @@ function addBorder(picture) {
 
 function areSimilar(a, b){
   let count = 0;
+  let subCount = 0;
+  let first = null;
+  let firstIndex = null;
+  let second = null;
+  let secondIndex = null;
   const arr = b.slice();
   for (let i =0; i<a.length; i++){
     if(a[i]===arr[i]){
@@ -275,18 +280,28 @@ function areSimilar(a, b){
         return true;
       }
     } else {
-      let moveIndex = arr.splice(i,1)
-      arr.splice(i+1, 0, moveIndex[0])
-      if (a[i]===arr[i]){
-        count++
-        if(count===a.length){
-          return true;
-        }
+      if (first === null){
+        first = arr[i];
+        firstIndex = i;
       } else {
-        return false
+        second = arr[i];
+        secondIndex = i;
+        arr.splice(firstIndex, 1, second);
+        arr.splice(secondIndex, 1, first);
+        subCount = 0
+        for (let inc = 0; inc<a.length; inc++){
+          if (a[inc]===arr[inc]){
+            subCount++;
+            if (subCount ===a.length){
+              console.log(subCount)
+              return true;
+            }
+          }
+        }
       }
     }
   }
+  return false;
 }
 
 // let count = 0;

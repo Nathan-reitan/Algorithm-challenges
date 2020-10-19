@@ -267,26 +267,48 @@ function addBorder(picture) {
 
 function areSimilar(a, b){
   let count = 0;
-  let bFirst = b[0];
-  let bSecond = b[1];
-  let bThird = b[2];
-  let b2 = [bSecond, bFirst, bThird];
-  let b3 = [bFirst, bThird, bSecond];
-  let b4 = [bThird, bSecond, bFirst];
-  const tempArr = [b, b2, b3, b4];
-  for (let i =0; i<tempArr.length; i++){
-    count=0;
-    for (let inc = 0; inc<a.length; inc++){
-      if (a[inc]===tempArr[i][inc]){
-        count++
-      }
-      if(count===3){
+  const arr = b.slice();
+  for (let i =0; i<a.length; i++){
+    if(a[i]===arr[i]){
+      count++;
+      if (count === a.length) {
         return true;
+      }
+    } else {
+      let moveIndex = arr.splice(i,1)
+      arr.splice(i+1, 0, moveIndex[0])
+      if (a[i]===arr[i]){
+        count++
+        if(count===a.length){
+          return true;
+        }
+      } else {
+        return false
       }
     }
   }
-  return false;
 }
+
+// let count = 0;
+// let bFirst = b[0];
+// let bSecond = b[1];
+// let bThird = b[2];
+// let b2 = [bSecond, bFirst, bThird];
+// let b3 = [bFirst, bThird, bSecond];
+// let b4 = [bThird, bSecond, bFirst];
+// const tempArr = [b, b2, b3, b4];
+// for (let i = 0; i < tempArr.length; i++) {
+//   count = 0;
+//   for (let inc = 0; inc < a.length; inc++) {
+//     if (a[inc] === tempArr[i][inc]) {
+//       count++
+//     }
+//     if (count === 3) {
+//       return true;
+//     }
+//   }
+// }
+// return false;
 
   // for (let i = 0; i<a.length; i++){
   //   if (a[i]!==b[i]){

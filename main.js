@@ -283,7 +283,7 @@ function areSimilar(a, b){
       if (first === null){
         first = arr[i];
         firstIndex = i;
-      } else {
+      } else if(second===null) {
         second = arr[i];
         secondIndex = i;
         arr.splice(firstIndex, 1, second);
@@ -298,6 +298,8 @@ function areSimilar(a, b){
             }
           }
         }
+      } else{
+        return false
       }
     }
   }

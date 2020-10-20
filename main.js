@@ -316,3 +316,7 @@ function arrayChange(inputArray) {
   }
   return count;
 }
+
+function palindromeRearranging(inputString) {
+
+}

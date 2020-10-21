@@ -319,9 +319,9 @@ function arrayChange(inputArray) {
 
 function palindromeRearranging(inputString) {
   const arr = inputString.split('');
-  arr.forEach(function(char, index, array){
-    console.log(char, index)
-  })
+  arr.sort();
+  console.log(arr)
+  for (let i=0; i<arr.length; i+=2)
 }
   // if (inputString.length%2===0){
   //   let count = 0;

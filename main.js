@@ -318,5 +318,17 @@ function arrayChange(inputArray) {
 }
 
 function palindromeRearranging(inputString) {
-
+  const arr = inputString.split('');
+  arr.forEach(function(char, index, array){
+    console.log(char, index)
+  })
 }
+  // if (inputString.length%2===0){
+  //   let count = 0;
+  //   for (let i = 0; i < inputString.length; i++) {
+  //     if (inputString.includes(inputString[i]))
+  //   }
+  // }
+  // for (let i =0; i<inputString.length; i++){
+
+  // }

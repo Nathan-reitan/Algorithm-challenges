@@ -317,17 +317,27 @@ function arrayChange(inputArray) {
   return count;
 }
 
+
 function palindromeRearranging(inputString) {
-  const arr = inputString.split('');
-  arr.sort();
-  console.log(arr.length/2)
-  console.log(arr)
-  for (let i = parseInt(arr.length / 2); i>=0; i-=2){
-    let move = arr.splice(i,1);
-    arr.push(move[0])
-  }
-  console.log(arr)
+  const charCounts = [...inputString].reduce((counts, char) => {
+    counts[char] = counts[char] ? counts[char] + 1 : 1;
+    return counts;
+  }, {});
+
+  return Object.values(charCounts).filter(count => count % 2 !== 0).length <= 1;
 }
+
+// function palindromeRearranging(inputString) {
+//   const arr = inputString.split('');
+//   arr.sort();
+//   console.log(parseInt(arr.length / 2))
+//   console.log(arr)
+//   for (let i = parseInt(arr.length / 2); i>=0; i-=2){
+//     let move = arr.splice(i,1);
+//     arr.push(move[0])
+//   }
+//   console.log(arr)
+// }
   // if (inputString.length%2===0){
   //   let count = 0;
   //   for (let i = 0; i < inputString.length; i++) {

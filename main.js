@@ -317,7 +317,6 @@ function arrayChange(inputArray) {
   return count;
 }
 
-
 function palindromeRearranging(inputString) {
   const charCounts = [...inputString].reduce((counts, char) => {
     counts[char] = counts[char] ? counts[char] + 1 : 1;

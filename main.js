@@ -320,8 +320,13 @@ function arrayChange(inputArray) {
 function palindromeRearranging(inputString) {
   const arr = inputString.split('');
   arr.sort();
+  console.log(arr.length/2)
   console.log(arr)
-  for (let i=0; i<arr.length; i+=2)
+  for (let i = parseInt(arr.length / 2); i>=0; i-=2){
+    let move = arr.splice(i,1);
+    arr.push(move[0])
+  }
+  console.log(arr)
 }
   // if (inputString.length%2===0){
   //   let count = 0;

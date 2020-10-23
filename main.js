@@ -341,3 +341,7 @@ function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
     return false;
   }
 }
+
+function arrayMaximalAdjacentDifference(inputArray) {
+
+}

@@ -325,3 +325,19 @@ function palindromeRearranging(inputString) {
 
   return Object.values(charCounts).filter(count => count % 2 !== 0).length <= 1;
 }
+
+function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
+  let yourStrongest = yourLeft;
+  let friendStrongest = friendsLeft;
+  if (yourStrongest<yourRight){
+    yourStrongest=yourRight;
+  }
+  if (friendStrongest<friendsRight){
+    friendStrongest=friendsRight
+  }
+  if(yourStrongest===friendStrongest && (yourLeft+yourRight===friendsLeft+friendsRight)){
+    return true;
+  } else {
+    return false;
+  }
+}

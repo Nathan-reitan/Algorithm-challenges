@@ -343,5 +343,13 @@ function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
 }
 
 function arrayMaximalAdjacentDifference(inputArray) {
-
+  let difference = 0;
+  for (let i=1; i<inputArray.length; i++){
+    if (Math.abs(inputArray[i - 1] - inputArray[i]) < Math.abs(inputArray[i] - inputArray[i + 1]) && difference < Math.abs(inputArray[i] - inputArray[i + 1])){
+        difference = Math.abs(inputArray[i] - inputArray[i + 1]);
+    } else if (Math.abs(inputArray[i - 1] - inputArray[i]) > Math.abs(inputArray[i] - inputArray[i + 1]) && difference < Math.abs(inputArray[i - 1] - inputArray[i])) {
+      difference = Math.abs(inputArray[i - 1] - inputArray[i])
+    }
+  }
+  return difference;
 }

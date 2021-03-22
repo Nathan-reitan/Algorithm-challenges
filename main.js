@@ -375,3 +375,19 @@ function isIPv4Address(inputString) {
     return true;
   }
 }
+
+function avoidObstacles(inputArray) {
+  let orderedArray = inputArray.sort(function(a, b){return a-b})
+  let jump = orderedArray[0];
+  for (let i = 1; i<orderedArray.length; i++){
+    if (orderedArray[i] === jump+1){
+      jump++
+      if (i===orderedArray.length-1){
+        return jump+1
+      }
+    } else {
+      return jump+1
+    }
+  }
+}
+

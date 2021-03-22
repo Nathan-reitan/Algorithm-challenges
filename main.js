@@ -353,3 +353,25 @@ function arrayMaximalAdjacentDifference(inputArray) {
   }
   return difference;
 }
+
+function isIPv4Address(inputString) {
+  let splitString = inputString.split(".");
+  console.log(splitString)
+  if (splitString.length!==4){
+    return false;
+  } else {
+    for (let i=0; i<splitString.length; i++){
+      if (splitString[i].length > 1){
+        if (splitString[i][0] === "0"){
+          return false
+        }
+      }
+      if (!(/^\d+$/.test(splitString[i]))){
+        return false;
+      } else if (parseInt(splitString[i])<0 || parseInt(splitString[i])>255){
+        return false
+      }
+    }
+    return true;
+  }
+}

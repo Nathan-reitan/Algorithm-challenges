@@ -377,17 +377,25 @@ function isIPv4Address(inputString) {
 }
 
 function avoidObstacles(inputArray) {
-  let orderedArray = inputArray.sort(function(a, b){return a-b})
-  let jump = orderedArray[0];
-  for (let i = 1; i<orderedArray.length; i++){
-    if (orderedArray[i] === jump+1){
-      jump++
-      if (i===orderedArray.length-1){
-        return jump+1
-      }
-    } else {
-      return jump+1
+  inputArray = inputArray.sort((a,b) => a-b);
+    
+    var i =1;
+    while(!inputArray.every((element)=> element%i != 0)){
+        i++;
     }
-  }
+    return i; 
+    
+  // let orderedArray = inputArray.sort(function(a, b){return a-b})
+  // let jump = orderedArray[0];
+  // for (let i = 1; i<orderedArray.length; i++){
+  //     while(orderedArray[i]+jump <= orderedArray[i+1]){
+  //       console.log('i = ', i)
+  //       console.log("jump = ", jump)
+  //       jump ++
+  //       }
+  // }
+  // return jump
+
+
 }
 

@@ -415,13 +415,28 @@ let image = [[1, 1, 1],
 //                     [81,106,88,68,42], 
 //                     [44,96,103,89,45], 
 //                     [59,113,137,126,80]]
+// 
+// need to use Math.floor() to avoid decimals and round down.
+// 
 
 function boxBlur(image){
-  for (let i = 0; i<image.length; i++){
-    for (let inc = 0; inc<image[i].length; inc++){
-      console.log(image[i][inc])
+  const blur = []
+  let i = 0;
+  while (image[i+2] !== undefined){
+    let inc = 0
+    const line = []
+      while (image[i][inc+2] !== undefined){
+        let sum = 0
+        sum = (image[i][inc] + image[i][inc+1] + image[i][inc+2])
+        sum += (image[i+1][inc] + image[i+1][inc+1] + image[i+1][inc+2])
+        sum += (image[i+2][inc] + image[i+2][inc+1] + image[i+2][inc+2])
+        sum = sum/9
+        sum = Math.floor(sum)
+        line.push(sum)
+        inc++
     }
+    blur.push(line)
+    i++
   }
+  return (blur)
 }
-
-

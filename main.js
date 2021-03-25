@@ -384,7 +384,7 @@ function avoidObstacles(inputArray) {
         i++;
     }
     return i; 
-    
+  
   // let orderedArray = inputArray.sort(function(a, b){return a-b})
   // let jump = orderedArray[0];
   // for (let i = 1; i<orderedArray.length; i++){
@@ -396,6 +396,32 @@ function avoidObstacles(inputArray) {
   // }
   // return jump
 
-
 }
+
+let image = [[1, 1, 1],
+             [1, 7, 1],
+             [1, 1, 1]];
+
+// input: [[36,0,18,9,9,45,27], 
+//         [27,0,254,9,0,63,90], 
+//         [81,255,72,45,18,27,0], 
+//         [0,0,9,81,27,18,45], 
+//         [45,45,227,227,90,81,72], 
+//         [45,18,9,255,9,18,45], 
+//         [27,81,36,127,255,72,81]]
+
+//  exprected output: [[82,73,48,25,31], 
+//                     [77,80,57,32,32], 
+//                     [81,106,88,68,42], 
+//                     [44,96,103,89,45], 
+//                     [59,113,137,126,80]]
+
+function boxBlur(image){
+  for (let i = 0; i<image.length; i++){
+    for (let inc = 0; inc<image[i].length; inc++){
+      console.log(image[i][inc])
+    }
+  }
+}
+
 

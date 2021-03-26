@@ -32,14 +32,24 @@ function charCount(myChar, str) {
 }
 
 function firstDuplicate(a){
+  // const newArray = []
+  // for (let i = 0; i < a.length; i++) {
+  //   if (!newArray.includes(a[i]) && i === a.length - 1) {
+  //     return -1
+  //   } else if (!newArray.includes(a[i])) {
+  //     newArray.push(a[i])
+  //   } else {
+  //     return a[i];
+  //   }
+  // }
   const newArray = []
-  for (let i = 0; i < a.length; i++) {
-    if (!newArray.includes(a[i]) && i === a.length - 1) {
+  for (let i = 0; i<a.length; i++){
+    if (newArray.includes(a[i])){
+      return a[i]
+    } else if (!newArray.includes(a[i]) && i === a.length-1){
       return -1
-    } else if (!newArray.includes(a[i])) {
-      newArray.push(a[i])
     } else {
-      return a[i];
+      newArray.push(a[i])
     }
   }
 }

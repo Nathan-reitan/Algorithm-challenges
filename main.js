@@ -458,3 +458,7 @@ firstNotRepeatingCharacter = s => {
   } 
   return "_"
 }
+
+function rotateImage(a) {
+
+}

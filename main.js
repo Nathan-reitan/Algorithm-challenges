@@ -438,3 +438,23 @@ function boxBlur(image){
   }
   return (blur)
 }
+
+
+
+firstNotRepeatingCharacter = s => {
+  let count = {}
+  for (let i = 0; i<s.length; i++){
+    if (count[s[i]]){
+      count[s[i]]+=1
+    } else{
+      count[s[i]] = 1
+    }
+  }
+  let key;
+  for (key in count){
+    if (count[key]===1){
+      return key
+    }
+  } 
+  return "_"
+}

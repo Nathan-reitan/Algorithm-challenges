@@ -459,6 +459,17 @@ firstNotRepeatingCharacter = s => {
   return "_"
 }
 
-function rotateImage(a) {
+const matrix = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+                ]
 
+function rotateImage(a) {
+  const rotatedImage = new Array(a.length);
+  for (let i=0; i<a.length; i++){
+    for (let inc=0; inc<a[i].length; inc++){
+
+    }
+  }
 }

@@ -457,14 +457,6 @@ firstNotRepeatingCharacter = s => {
   return "_"
 }
 
-const matrix = [
-                [1,  2,  3,  4,  5],
-                [6,  7,  8,  9,  10],
-                [11, 12, 13 ,14, 15],
-                [16, 17, 18 ,19, 20],
-                [21, 22, 23, 24, 25]
-                ]
-
 function rotateImage(a) {
   const rotatedImage = [];
   for (let i=0; i<a.length; i++){
@@ -477,3 +469,28 @@ function rotateImage(a) {
   }
   return rotatedImage
 }
+
+const grid = [['.', '.', '.', '1', '4', '.', '.', '2', '.'],
+              ['.', '.', '6', '.', '.', '.', '.', '.', '.'],
+              ['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+              ['.', '.', '1', '.', '.', '.', '.', '.', '.'],
+              ['.', '6', '7', '.', '.', '.', '.', '.', '9'],
+              ['.', '.', '.', '.', '.', '.', '8', '1', '.'],
+              ['.', '3', '.', '.', '.', '.', '.', '.', '6'],
+              ['.', '.', '.', '.', '.', '7', '.', '.', '.'],
+              ['.', '.', '.', '5', '.', '.', '.', '7', '.']]
+
+function sudoku2(grid) {
+  let pass = true;
+  let currentNumber;
+  for (let i = 0; i<grid.length; i++){
+    for (let inc=0; inc<grid[i].length; inc++){
+      if (grid[i][inc] === "."){
+        continue;
+      } else {
+        currentNumber = grid[i][inc];
+      }
+    }
+  }
+}
+        

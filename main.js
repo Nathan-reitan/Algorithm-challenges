@@ -439,8 +439,6 @@ function boxBlur(image){
   return (blur)
 }
 
-
-
 firstNotRepeatingCharacter = s => {
   let count = {}
   for (let i = 0; i<s.length; i++){
@@ -455,21 +453,27 @@ firstNotRepeatingCharacter = s => {
     if (count[key]===1){
       return key
     }
-  } 
+  }
   return "_"
 }
 
 const matrix = [
-                [1, 2, 3],
-                [4, 5, 6],
-                [7, 8, 9]
+                [1,  2,  3,  4,  5],
+                [6,  7,  8,  9,  10],
+                [11, 12, 13 ,14, 15],
+                [16, 17, 18 ,19, 20],
+                [21, 22, 23, 24, 25]
                 ]
 
 function rotateImage(a) {
-  const rotatedImage = new Array(a.length);
+  const rotatedImage = [];
+  for (let i=0; i<a.length; i++){
+    rotatedImage[i] = []
+  }
   for (let i=0; i<a.length; i++){
     for (let inc=0; inc<a[i].length; inc++){
-
+      rotatedImage[inc].splice(0, 0, a[i][inc]);
     }
   }
+  return rotatedImage
 }

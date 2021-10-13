@@ -482,15 +482,11 @@ const grid = [['.', '.', '.', '1', '4', '.', '.', '2', '.'],
 
 function sudoku2(grid) {
   let pass = true;
-  let currentNumber;
   for (let i = 0; i<grid.length; i++){
-    for (let inc=0; inc<grid[i].length; inc++){
-      if (grid[i][inc] === "."){
-        continue;
-      } else {
-        currentNumber = grid[i][inc];
-      }
-    }
+    
   }
 }
-        
+
+function minesweeper(matrix){
+  
+}

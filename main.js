@@ -439,7 +439,7 @@ function boxBlur(image){
   return (blur)
 }
 
-firstNotRepeatingCharacter = s => {
+const firstNotRepeatingCharacter = s => {
   let count = {}
   for (let i = 0; i<s.length; i++){
     if (count[s[i]]){
@@ -487,6 +487,47 @@ function sudoku2(grid) {
   }
 }
 
+function checkQuadrant(y, x, matrix){
+  let count = 0;
+  let yStart = y-1;
+  let yStop = y+1;
+  let xStart = x-1;
+  let xStop = x+1;
+  console.log(`before while loop:  y is ${y} yStart is ${yStart} yStop ${yStop} x is ${x} xStart ${xStart} xStop ${xStop}`)
+  if (y===0){
+    yStart = y;
+  }
+  if (y===matrix.length){
+    yStop = y;
+  }
+  if (x===0){
+    xStart=x;
+  }
+  if (x===matrix[0].length){
+    xStop=x
+  }
+  while (yStart<=yStop){
+    while (xStart<=xStop){
+      if (matrix[yStart][xStart]){
+        count++
+      }
+      xStart++
+    }
+    yStart++
+  }
+  return count
+}
+
 function minesweeper(matrix){
-  
+  const sweepArr = matrix.slice();
+  for (let i = 0; i<matrix.length; i++){
+    for (let inc = 0; inc<matrix[0].length; inc++){
+      if (matrix[i][inc]){
+        sweepArr[i][inc] = checkQuadrant(i, inc, matrix) - 1;
+      } else {
+        sweepArr[i][inc] = checkQuadrant(i, inc, matrix)
+      }
+    }
+  }
+  return sweepArr
 }

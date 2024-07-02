@@ -70,3 +70,14 @@ const romanNumeralEncoder = (num) => {
 			);
 	}
 };
+
+const moveZeros = (arr) => {
+	const solution = arr.slice();
+	for (let i = solution.length - 1; i >= 0; i--) {
+		if (solution[i] === 0) {
+			solution.splice(i, 1);
+			solution.push(0);
+		}
+	}
+	return solution;
+};

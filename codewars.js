@@ -33,14 +33,14 @@ const romanNumeralEncoder = (num) => {
 			return (returnValue = romanNumerals[place][0] + romanNumerals[place][1]);
 		} else if (4 < value < 9) {
 			returnValue = romanNumerals[place][1];
-			for (let i = 6; i < value; i++) {
+			for (let i = 6; i <= value; i++) {
 				returnValue += romanNumerals[place][0];
 			}
 			return returnValue;
 		} else if (value === 9) {
-			return (returnValue = romanNumerals[place][0] + romanNumerals[place + 1][0]);
+			return (returnValue = romanNumerals[place][0] + romanNumerals[place + -1][0]);
 		} else {
-			return;
+			return "";
 		}
 	};
 

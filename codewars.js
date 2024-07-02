@@ -82,4 +82,7 @@ const moveZeros = (arr) => {
 	return solution;
 };
 
+// skipped for now.  need to learn binary
 const countBits = (n) => {};
+
+const findEvenIndex = (arr) => {};

@@ -81,3 +81,5 @@ const moveZeros = (arr) => {
 	}
 	return solution;
 };
+
+const countBits = (n) => {};

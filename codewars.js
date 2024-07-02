@@ -85,4 +85,19 @@ const moveZeros = (arr) => {
 // skipped for now.  need to learn binary
 const countBits = (n) => {};
 
-const findEvenIndex = (arr) => {};
+const findEvenIndex = (arr) => {
+	const initialValue = 0;
+	const arrSum = arr.reduce((acc, cur) => acc + cur, initialValue);
+	if (arrSum === 0) {
+		return 0;
+	} else {
+		for (let i = 1; i < arr.length + 1; i++) {
+			let leftSum = arr.slice(0, i).reduce((acc, cur) => acc + cur);
+			let rightSum = arr.slice(i + 1).reduce((acc, cur) => acc + cur);
+			if (leftSum === rightSum) {
+				return i;
+			}
+		}
+		return -1;
+	}
+};

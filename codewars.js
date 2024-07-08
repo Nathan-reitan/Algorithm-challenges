@@ -116,3 +116,5 @@ const spinWords = (string) => {
 	}
 	return solution.trim();
 };
+
+const humanReadable = (seconds) => {};

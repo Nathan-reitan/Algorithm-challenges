@@ -101,3 +101,18 @@ const findEvenIndex = (arr) => {
 		return -1;
 	}
 };
+
+const spinWords = (string) => {
+	const arr = string.split(" ");
+	let solution = "";
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i].length > 4) {
+			const word = arr[i].split("");
+			let spin = word.toString().reverse();
+			solution += " " + spin;
+		} else {
+			solution += " " + arr[i];
+		}
+	}
+	return solution.trim();
+};

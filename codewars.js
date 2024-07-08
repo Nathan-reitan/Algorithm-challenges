@@ -117,4 +117,36 @@ const spinWords = (string) => {
 	return solution.trim();
 };
 
-const humanReadable = (seconds) => {};
+const humanReadable = (seconds) => {
+	let hours = "00";
+	let minutes = "00";
+	let second = "00";
+	let temp;
+	let tempArr;
+	if (seconds >= 3600) {
+		temp = (seconds / 3600).toString();
+		tempArr = temp.split(".");
+		hours = tempArr[0];
+		temp = tempArr[1] * 3600;
+		tempArr = temp.split(".");
+		minutes = tempArr[0];
+		second = tempArr[1];
+	} else if (seconds >= 60 && seconds < 3599) {
+		temp = seconds / 60;
+		temp = tempArr[1] * 3600;
+		tempArr = temp.split(".");
+		minutes = tempArr[0];
+		second = tempArr[1];
+	} else {
+		second = seconds;
+	}
+	let arr = [hours, minutes, second];
+	for (let i = 0; i < arr.length; i++) {
+		console.log(arr[i].toString().length);
+		if (arr[i].length != 2) {
+			arr.splice(i, 1, "0" + arr[i]);
+		}
+		[hours, minutes, second] = arr;
+	}
+	return hours + ":" + minutes + ":" + second;
+};

@@ -108,7 +108,7 @@ const spinWords = (string) => {
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i].length > 4) {
 			const word = arr[i].split("");
-			let spin = word.toString().reverse();
+			let spin = word.replace(",", "").toString().reverse();
 			solution += " " + spin;
 		} else {
 			solution += " " + arr[i];

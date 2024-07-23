@@ -150,3 +150,20 @@ const humanReadable = (seconds) => {
 	}
 	return hours + ":" + minutes + ":" + second;
 };
+
+const pigIt = (str) => {
+	const arr = str.split(" ");
+	let result = "";
+	let regex = /[^a-zA-Z0-9]/g;
+	for (let i = 0; i < arr.length; i++) {
+		let string = arr[i];
+		let firstChar = string.slice(0, 1);
+		let rest = string.slice(1);
+		if (regex.test(string) === true) {
+			result += " " + rest + firstChar + "ay";
+		} else {
+			result += " " + rest + firstChar;
+		}
+	}
+	return result.trim();
+};
